@@ -1,3 +1,8 @@
+<?php
+   include('php/utility.php');
+    
+?>
+
 <html>
 
 <head>
@@ -57,18 +62,28 @@
                                <th>Delate</th>
                                <th>Details</th>
                            </tr>
-                            <tr>
-                              <td>Rahim</td>
-                              <td><a href="edit.php?id=">Edit</a></td>
-                              <td><a href="Delate.php?id=">Delate</a></td>
-                              <td><a href="Details.php?id=">Details</a></td>
-                            </tr>
-                            <tr>
-                              <td>Rahim</td>
-                              <td><a href="edit.php?id=">Edit</a></td>
-                              <td><a href="Delate.php?id=">Delate</a></td>
-                              <td><a href="Details.php?id=">Details</a></td>
-                            </tr>
+
+            <?php
+            //code for table of names 
+              if($_SESSION['id']){
+
+              $query = "select * from addresses where user_id =".$_SESSION['id'];
+            
+                 $result = mysqli_query($conn, $query);
+                 $results= mysqli_num_rows($result);
+                if($results){    
+                    while($row= mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+                            echo  "<td>".$row['name']."</td>";
+                            echo  "<td><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
+                            echo  "<td><a href='delete.php?id=".$row['id']."'>Delate</a></td>";
+                            echo  "<td><a href='Details.php?id=".$row['id']."'>Details</a></td>";
+                        echo "</tr>";
+                }
+             }
+            }
+          ?>
+                            
                     </table>
                 </div>
                 

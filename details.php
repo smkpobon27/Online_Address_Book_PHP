@@ -1,3 +1,7 @@
+<?php
+    include('php/utility.php');
+?>
+
 <html>
 
 <head>
@@ -51,19 +55,19 @@
 
                <div class="row">
                    <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Name:</h4></div>
-                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4>Rahim</h4></div>
+                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['name'] ?></h4></div>
                </div>
                 <div class="row">
                    <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Address:</h4></div>
-                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4>Rahim</h4></div>
+                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['address'] ?></h4></div>
                </div>
                 <div class="row">
                    <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Contacts:</h4></div>
-                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4>Rahim</h4></div>
+                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['contact'] ?></h4></div>
                </div>
                 <div class="row">
                    <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Email:</h4></div>
-                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4>Rahim</h4></div>
+                   <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['emailcontact'] ?></h4></div>
                </div>
                 </div>
 

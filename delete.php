@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create</title>
+    <title>Delete</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/custom.css">
@@ -49,47 +49,36 @@
         </nav>
 
 
-        <div class=" container-fluid">
+        <div class=" container-fluid" id="details">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12">
-                   <h3 style="font-weight:600">Create new Contact:</h3>
-
-                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" class="form-horizontal" id="createform">
-                      <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Name">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="address" class="col-sm-2 control-label">Address</label>
-                        <div class="col-sm-10">
-                          <textarea name="address" id="address" cols="30" rows="3" placeholder="Address"></textarea>
-                        </div>
-                      </div>
-                       <div class="form-group">
-                        <label for="contact" class="col-sm-2 control-label">Contact</label>
-                        <div class="col-sm-10">
-                          <textarea name="contact" id="contact" cols="30" rows="3" placeholder="Contacts"></textarea>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="contactemail" class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="email" name="emailcontact" class="form-control" id="contactemail" placeholder="Email">
-                        </div>
-                      </div>
-                     
-                      <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                          <input type="submit" class="btn btn-default" value="Create" name="save"/>
-                        </div>
-                      </div>
-                    </form>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Name:</h4></div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['name'] ?></h4></div>
+                    </div>
+                        <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Address:</h4></div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['address'] ?></h4></div>
+                    </div>
+                        <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Contacts:</h4></div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['contact'] ?></h4></div>
+                    </div>
+                        <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4 style="font-weight: bold">Email:</h4></div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12"><h4><?php echo $row['emailcontact'] ?></h4></div>
+                    </div>
+                    <h3>Are you sure?</h3>
+                    <input type="submit" name="delete" value="Delete" class="btn btn-primary"/>
+               </form>
                 </div>
 
             </div>
-        </div>
+            
+        </div> <!--details ends here -->
+
+
     </div>
     <!-- first container-fluid  -->
 

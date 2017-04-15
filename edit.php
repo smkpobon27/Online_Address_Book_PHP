@@ -1,3 +1,7 @@
+<?php
+    include('php/utility.php'); 
+?>
+
 <html>
 
 <head>
@@ -53,25 +57,25 @@
                       <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-10">
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                          <input type="text" name="name" value="<?php echo $row['name'] ?>" class="form-control" id="name" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="address" class="col-sm-2 control-label">Address</label>
                         <div class="col-sm-10">
-                          <textarea name="address" id="address" cols="30" rows="3" placeholder="Address"></textarea>
+                          <textarea name="address" id="address" cols="30" rows="3" placeholder="Address"><?php echo $row['address'] ?></textarea>
                         </div>
                       </div>
                        <div class="form-group">
                         <label for="contact" class="col-sm-2 control-label">Contact</label>
                         <div class="col-sm-10">
-                          <textarea name="contact" id="contact" cols="30" rows="3" placeholder="Contacts"></textarea>
+                          <textarea name="contact" id="contact" cols="30" rows="3" placeholder="Contacts"><?php echo $row['contact'] ?></textarea>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="contactemail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" name="contactemail" class="form-control" id="contactemail" placeholder="Email">
+                          <input type="email" name="emailcontact" value="<?php echo $row['emailcontact'] ?>" class="form-control" id="contactemail" placeholder="Email">
                         </div>
                       </div>
                      

@@ -1,3 +1,9 @@
+<?php
+    include('php/login_function.php');
+
+    
+?>
+
 <html>
 
 <head>
@@ -48,7 +54,9 @@
             <div class="row">
 
                 <div class="col-lg-4 col-lg-offset-4" id="content_right">
-                    <form class="form-horizontal" method="post" id="form">
+                 <p class="bg-danger text-danger" ><?php if($error){echo $error;} ?></p>
+
+                    <form class="form-horizontal" method="post" id="form" >
                         <div class="form-group">
                             <label for="signupEmail" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
@@ -64,7 +72,7 @@
                         
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit"  name="submit"class="btn btn-default" value="Sign up"/>
+                                <input type="submit"  name="submit" class="btn btn-default" value="Sign Up"/>
                             </div>
                         </div>
                     </form>
