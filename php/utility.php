@@ -30,4 +30,45 @@
         $result = mysqli_query($conn, $query);
         header("Location: addressbook.php");
     }
+
+//To read/Import  file as CSV format
+if(isset($_POST['Import'])){
+    $filename = $_FILES['file']['tmp_name'];
+    
+    if($_FILES['file']['size'] > 0){
+        $file = fopen($filename, "r");
+        while(($getdata= fgetcsv($file, 10000, ",")) !== FALSE){
+            $sql = "insert into addresses(name,address,contact,emailcontact,user_id) values ('".$getdata[0]."','".$getdata[1]."','".$getdata[2]."','".$getdata[3]."','".$_SESSION['id']."')";
+            $result = mysqli_query($conn, $sql);
+            // if(!isset($result)){
+            //     	echo "<script type=\"text/javascript\">
+            //         alert(\"Invalid File:Please Upload CSV File.\");
+            //         window.location = \"addressbook.php\"
+            //         </script>";	
+            //         }
+            //         else {
+            //         echo "<script type=\"text/javascript\">
+            //         alert(\"CSV File has been successfully Imported.\");
+            //         window.location = \"addressbook.php\"
+            //         </script>";
+            //         }
+        }
+        fclose($file);
+    }
+}
+///////////////////////////////////////////////////////////////
+// DB data Export to Excel 
+if(isset($_POST['Export'])){
+    header('Content-Type: text/csv; charset= utf-8');
+    header('Content-Disposition: attachment; filename= data.csv');
+    $output= fopen("php://output", "w");
+    fputcsv($output, array('Id','Name','Address', 'Contact no.','Email'));
+    $query = "Select id,name,address,contact,emailcontact from addresses where user_id='".$_SESSION['id']."' ORDER By id ASC";
+    $result = mysqli_query($conn, $query);
+    while($row= mysqli_fetch_assoc($result)){
+        fputcsv($output, $row);
+    }
+    fclose($output);
+}
+
 ?>

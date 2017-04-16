@@ -85,11 +85,28 @@
           ?>
                             
                     </table>
+                    <form method="post" name="upload_csv" class="pull-left"enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="InputFile">File input</label>
+                            <input type="file" name="file" id="InputFile">
+                        </div>
+                        
+                        <button type="submit" name="Import" class="btn btn-primary  button-loading" data-loading-text="Loading...">Import</button>
+                    </form>
+
+                     <!-- this form for export excel -->
+                   <form method="post" name="download_csv" class="pull-right" enctype="multipart/form-data">
+                        
+                        <button type="submit" name="Export" class="btn btn-success" >Export to excel</button>
+                    </form>
+
+                </div>
                 </div>
                 
             </div>
         </div>
-    </div>
+
+        
     <!-- first container-fluid  -->
 
     <script src="js/bootstrap.js"></script>
