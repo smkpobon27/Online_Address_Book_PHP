@@ -2,14 +2,17 @@
     session_start();
     include('connection.php');
     $message = "";
-     if($_GET["logout"]==1 && $_SESSION['id']){
-        session_destroy();
-        global $message ;
-        $message= "You've been logged out successfully.";
+    if(isset($_GET['logout'])){
+        if($_GET["logout"]==1 && $_SESSION['id']){
+            session_destroy();
+            global $message ;
+            $message= "You've been logged out successfully.";
+        }
     }
    // print_r($_SESSION);
 
     $error="";
+    if(isset($_POST['submit'])){
     if($_POST['submit']=='Sign Up'){
 
         if(!$_POST['signupemail']) $error.="<br>Please enter your email";
@@ -44,21 +47,25 @@
                   print_r ($_SESSION);
 
                   //redirect to any page
-                  header("Location: addressbook.php");
+                  header("Location: addressbook.php");die;
             }
         }      
     }
+}
 
+if(isset($_POST['submit'])){
     if($_POST['submit']== "Log in"){
         $query = "Select * from users where email='".$_POST['loginemail']."' AND password='".md5($_POST['loginpassword'])."' LIMIT 1";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         if($row){
         $_SESSION['id'] = $row['id'];
-        header("Location: addressbook.php");
+        header("Location: addressbook.php");die;
         }else{
             $error.="<br>We could not find any matched account.";
         }
 
     }
+}
+
 ?>
