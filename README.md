@@ -3,7 +3,18 @@
 This is a Simple Online Address Book Web Application that can serve your purposes if you want to save your contact remotely and want to use them. 
 
 ## Functionality:
-It has functionality to 'Create new contact', 'Edit contact', 'Show Details', 'Delete contact','Import CSV file', 'Download excel file'. Also Sign up & Log in, Log out funcionality for every user. This full project is created from Scratch, No PHP frameworks used.
+
+#### 'Create new contact'
+#### 'Edit contact'
+#### 'Show Details'
+#### 'Delete contact'
+#### 'Import CSV file'
+#### 'Download excel file'
+#### 'Sign up' 
+#### 'Log in'
+#### 'Log out' 
+
+Funcionality for every user. This full project is created from Scratch using Raw PHP, No PHP frameworks used.
 
 ## Used Technologies in this Project:
 #### PHP 5
