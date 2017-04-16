@@ -5,11 +5,14 @@ body{
 .container-fluid{
     padding: 0;
 }
+
 .content #content_left{
+    padding-top: 50px;
      background-color: burlywood;
     height: 700px;
 }
 .content #content_right{
+    padding-top: 50px;
     background-color: chocolate;
     height: 700px;
 }
@@ -36,6 +39,7 @@ body{
     font-weight: bolder;
 }
 .grayback{
+    
     background-color: gray;
 }
 
@@ -52,4 +56,9 @@ body{
 }
 #createform{
     padding-top: 50px;
+}
+
+#arrow span,a{
+    font-size: 1.1em;
+    margin-top: 15px;
 }
