@@ -5,7 +5,7 @@
         header("Location: index.php");
     }
     //contact Create scripts 
- print_r($_SESSION);
+ //print_r($_SESSION);
     if($_POST['save'] == "Create"){
         $current_user = intval($_SESSION['id']);
         $query = "insert into addresses(name,address,contact,emailcontact,user_id) values('".$_POST['name']."','".$_POST['address']."','".$_POST['contact']."','".$_POST['emailcontact']."','".$current_user."')";
