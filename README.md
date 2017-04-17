@@ -4,15 +4,17 @@ This is a Simple Online Address Book Web Application that can serve your purpose
 
 ## Functionality:
 
+#### 'Sign up' 
+#### 'Log in'
+#### 'Log out'
 #### 'Create new contact'
 #### 'Edit contact'
 #### 'Show Details'
 #### 'Delete contact'
+#### 'Search through the Address book'
 #### 'Import CSV file'
 #### 'Download excel file'
-#### 'Sign up' 
-#### 'Log in'
-#### 'Log out' 
+ 
 
 Funcionality for every user. This full project is created from Scratch using Raw PHP, No PHP frameworks used.
 
