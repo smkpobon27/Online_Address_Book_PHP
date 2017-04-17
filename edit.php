@@ -47,8 +47,19 @@
                 <!-- /.container-fluid -->
             </nav>
 
+             
 
             <div class=" container-fluid">
+               <div class="row">
+                    <div class="col-lg-10">
+                        <h4 style="color: crimson;margin-top:50px;" class="pull-right">Hello, <?php 
+                            $query = "SELECT email from users where id=".$_SESSION['id']." Limit 1";
+                            $res = mysqli_query($conn, $query);
+                            $ro= mysqli_fetch_array($res);
+                            echo $ro['email'];
+                         ?></h4>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12">
                         <h3 style="font-weight:600">Edit Contact:</h3>

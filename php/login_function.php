@@ -44,7 +44,7 @@
                  mysqli_query($conn, $query);
                  //  echo "You have been signed up.";
                   $_SESSION['id']=mysqli_insert_id($conn);
-                  print_r ($_SESSION);
+                 // print_r ($_SESSION);
 
                   //redirect to any page
                   header("Location: addressbook.php");die;

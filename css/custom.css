@@ -5,6 +5,12 @@ body{
 .container-fluid{
     padding: 0;
 }
+.navbar-form .form-control{
+    margin-top: 10px;
+}
+.navbar-form .btn-primary{
+    margin-top: 10px;
+}
 
 .content #content_left{
     padding-top: 50px;

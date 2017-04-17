@@ -37,11 +37,20 @@
 
                             <li><a href="addressbook.php">Address book</a></li>
                         </ul>
+                        
+                        
 
                         <ul class="nav navbar-nav navbar-right">
+
                             <li><a href="index.php?logout=1">Log out</a></li>
 
                         </ul>
+                        <form method="GET" class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" name="searchquery" class="form-control" placeholder="Search book">
+                            </div>
+                            <button type="submit" name="search" class="btn btn-primary">Search</button>
+                        </form>
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>
@@ -51,9 +60,20 @@
 
             <div class=" container-fluid">
                 <div class="row">
+                    <div class="col-lg-10">
+                        <h4 style="color: crimson;margin-top:50px;" class="pull-right">Hello, <?php 
+                            $query = "SELECT email from users where id=".$_SESSION['id']." Limit 1";
+                            $result = mysqli_query($conn, $query);
+                            $row= mysqli_fetch_array($result);
+                            echo $row['email'];
+                         ?></h4>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12">
                         <h3 class="pull-left"><a href="create.php">Create new</a></h3>
                         <h3 class="pull-right"><a href="addressbook.php">Refresh</a></h3>
+                        
                         <table class="table table-striped">
                             <tr>
                                 <th>Name</th>
@@ -63,30 +83,48 @@
                             </tr>
 
                             <?php
-            //code for table of names 
-              if($_SESSION['id']){
 
-              $query = "select * from addresses where user_id =".$_SESSION['id'];
-            
-                 $result = mysqli_query($conn, $query);
-                 $results= mysqli_num_rows($result);
-                if($results){    
-                    while($row= mysqli_fetch_assoc($result)){
-                        echo "<tr>";
-                            echo  "<td>".$row['name']."</td>";
-                            echo  "<td><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
-                            echo  "<td><a href='delete.php?id=".$row['id']."'>Delate</a></td>";
-                            echo  "<td><a href='Details.php?id=".$row['id']."'>Details</a></td>";
-                        echo "</tr>";
-                }
-             }
-            }
+                            if(isset($_GET['search'])){
+                                $query="SELECT * from addresses where name like '".$_GET['searchquery']."%' AND user_id=".$_SESSION['id'];
+
+                                    $result = mysqli_query($conn, $query);
+                                    $results= mysqli_num_rows($result);
+                                    if($results){    
+                                        while($row= mysqli_fetch_assoc($result)){
+                                            echo "<tr>";
+                                                echo  "<td>".$row['name']."</td>";
+                                                echo  "<td><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
+                                                echo  "<td><a href='delete.php?id=".$row['id']."'>Delate</a></td>";
+                                                echo  "<td><a href='Details.php?id=".$row['id']."'>Details</a></td>";
+                                            echo "</tr>";
+                                    }
+                                }
+                            }else{
+                                //code for table of names 
+                                if($_SESSION['id']){
+
+                                $query = "SELECT * from addresses where user_id =".$_SESSION['id'];
+                                
+                                    $result = mysqli_query($conn, $query);
+                                    $results= mysqli_num_rows($result);
+                                    if($results){    
+                                        while($row= mysqli_fetch_assoc($result)){
+                                            echo "<tr>";
+                                                echo  "<td>".$row['name']."</td>";
+                                                echo  "<td><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
+                                                echo  "<td><a href='delete.php?id=".$row['id']."'>Delate</a></td>";
+                                                echo  "<td><a href='Details.php?id=".$row['id']."'>Details</a></td>";
+                                            echo "</tr>";
+                                    }
+                                }
+                                }
+                            }
           ?>
 
                         </table>
                         <form method="post" name="upload_csv" class="pull-left" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="InputFile">File input</label>
+                                <label for="InputFile">Import File</label>
                                 <input type="file" name="file" id="InputFile">
                             </div>
 
