@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div class="container-fluid" style="background-color: burlywood" id="table-page">
+        <div class="container-fluid"  id="table-page">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -148,6 +148,9 @@
 
         <script src="js/jquery-1.11.3.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script>
+          document.body.style.backgroundColor = "burlywood";
+        </script>
     </body>
 
     </html>
