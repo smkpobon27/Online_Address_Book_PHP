@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <div class="container-fluid" style="background-color: burlywood" id="table-page">
+        <div class="container-fluid" style="background-color: burlywood" id="page-height">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -95,10 +95,11 @@
 
             </div>
             <!--details ends here -->
-
-
         </div>
         <!-- first container-fluid  -->
+        <div class="container-fluid footer">
+            <p id="foot">&copy2017 <span>Smk Pobon</span> All Rights Reserved </p>
+        </div>
 
         <script src="js/jquery-1.11.3.js"></script>
         <script src="js/bootstrap.js"></script>

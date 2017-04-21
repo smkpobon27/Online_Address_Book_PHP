@@ -36,6 +36,7 @@
 
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="about.php">About</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -53,7 +54,7 @@
                 <div class="row">
 
                     <div class="col-lg-4 col-lg-offset-4" id="content_right">
-                        <p class="bg-danger text-danger">
+                        <p class="bg-danger text-danger" style="margin-top: 20px">
                             <?php if($error){echo $error;} ?>
                         </p>
 
@@ -81,8 +82,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- first container-fluid  -->
+        <div class="container-fluid footer">
+            <p id="foot">&copy2017 <span>Smk Pobon</span> All Rights Reserved </p>
+        </div>
 
         <script src="js/jquery-1.11.3.js"></script>
         <script src="js/bootstrap.js"></script>

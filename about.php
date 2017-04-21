@@ -54,41 +54,15 @@
             </div>
 
 
-            <div class="content container">
+            <div class="content about container" id="page-height">
                 <div class="row">
-                    <div class="col-lg-8" id="content_left">
-                        <h1>Your Address book where you Go!</h1>
-                        <p>This is an Online Address book. It will help you to keep update your Contacts. </p>
-                    </div>
-
-                    <div class="col-lg-4" id="content_right">
-                        <p class="bg-success text-success">
-                            <?php if($message){echo $message;} ?>
-                        </p>
-                        <form class="form-horizontal" method="post" id="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" name="loginemail" value="<?php if(isset($_POST['loginemail'])){echo $_POST['loginemail']; } ?>" class="form-control" id="inputEmail3" placeholder="Email" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" name="loginpassword" value="<?php  if(isset($_POST['loginpassword'])){echo $_POST['loginpassword']; } ?>" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <input type="submit" name="submit" class="btn btn-primary" value="Log in" />
-                                </div>
-                            </div>
-                        </form>
-                        <p class="bg-danger text-danger">
-                            <?php echo $error ?>
-                        </p>
-
+                    <div class="col-lg-12 col-sm-12 col-xs-12" >
+                        <h1>About Me</h1>
+                        <hr>
+                        <p>Hello, I'm <span>S.M.Kamruzzaman (Pobon)</span>. Now I'm studying in Computer Science & Engineering department at University of Rajshahi. </p>
+                        <p>My Id: 13055443</p>
+                        <p>Email: smkpobonru@gmail.com</p>
+                        <p>Phone no: 01714-601116</p>
                     </div>
                 </div>
             </div>

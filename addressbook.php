@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div class="container-fluid"  id="table-page">
+        <div class="container-fluid" id="table-page">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,8 +37,8 @@
 
                             <li><a href="addressbook.php">Address book</a></li>
                         </ul>
-                        
-                        
+
+
 
                         <ul class="nav navbar-nav navbar-right">
 
@@ -73,7 +73,7 @@
                     <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12">
                         <h3 class="pull-left"><a href="create.php">Create new</a></h3>
                         <h3 class="pull-right"><a href="addressbook.php">Refresh</a></h3>
-                        
+
                         <table class="table table-striped">
                             <tr>
                                 <th>Name</th>
@@ -83,7 +83,7 @@
                             </tr>
 
                             <?php
-
+                        //code for search field
                             if(isset($_GET['search'])){
                                 $query="SELECT * from addresses where name like '".$_GET['searchquery']."%' AND user_id=".$_SESSION['id'];
 
@@ -100,11 +100,11 @@
                                     }
                                 }
                             }else{
-                                //code for table of names 
+                                //code for table of addresses 
                                 if($_SESSION['id']){
 
-                                $query = "SELECT * from addresses where user_id =".$_SESSION['id'];
-                                
+                                $query = "SELECT * from addresses where user_id =".$_SESSION['id']; 
+                                                                        //watch login_function.php signup/login func
                                     $result = mysqli_query($conn, $query);
                                     $results= mysqli_num_rows($result);
                                     if($results){    
@@ -142,14 +142,17 @@
 
             </div>
         </div>
-
-
         <!-- first container-fluid  -->
+
+        <div class="container-fluid footer">
+                    <p id="foot">&copy2017 <span>Smk Pobon</span> All Rights Reserved </p>   
+        </div>
 
         <script src="js/jquery-1.11.3.js"></script>
         <script src="js/bootstrap.js"></script>
         <script>
-          document.body.style.backgroundColor = "burlywood";
+           
+            $('#table-page').css("background-color","burlywood");
         </script>
     </body>
 

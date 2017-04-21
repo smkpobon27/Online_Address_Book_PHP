@@ -2,7 +2,7 @@
     session_start();
     include('connection.php');
     $message = "";
-    if(isset($_GET['logout'])){
+    if(isset($_GET['logout']) && isset($_SESSION['id'])){
         if($_GET["logout"]==1 && $_SESSION['id']){
             session_destroy();
             global $message ;
@@ -37,7 +37,7 @@
             $result = mysqli_query($conn, $query);
             $results= mysqli_num_rows($result);      
             if($results){
-                $error.= "This email is already registered.Do you want to log in?";
+                $error.= "This email is already registered.Do you want to log in? <a href='index.php' style='font-weight: bold'>Log in</a>";
             }else{
                // echo "Hello";
                 $query = "Insert into users (email, password) values ('".$_POST['signupemail']."','".md5($_POST['signuppassword'])."')";

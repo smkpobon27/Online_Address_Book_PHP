@@ -3,7 +3,7 @@ body{
     padding-top: 50px;
 }
 .container-fluid{
-    padding: 0;
+    /*padding: 0;*/
 }
 
 .navbar-form .form-control{
@@ -50,7 +50,7 @@ body{
     background-color: gray;
 }
 
-#table-page{
+#page-height{
     height: 700px;
 }
 
@@ -68,4 +68,26 @@ body{
 #arrow span,a{
     font-size: 1.1em;
     margin-top: 15px;
+}
+.about{
+    background-color: chocolate;
+    color: white;
+}
+.about p{
+    font-size: 1.3em;
+}
+.about p span{
+    color: aqua;
+}
+.footer{
+    text-align: center;
+    background-color: darkslateblue;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 5px;
+    font-size: 1.2em;
+}
+
+.footer p span{
+    color: cyan;
 }
